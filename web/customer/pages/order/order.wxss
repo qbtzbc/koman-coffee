@@ -1,0 +1,12 @@
+/* 订单列表样式 */
+.tabs { display: flex; background: #FFF; padding: 20rpx; margin-bottom: 20rpx; }
+.tab { flex: 1; text-align: center; padding: 16rpx 0; font-size: 28rpx; color: #666; }
+.tab.active { color: #6B4423; font-weight: bold; border-bottom: 4rpx solid #6B4423; }
+.order-list { padding: 0 20rpx; }
+.order-card { margin-bottom: 20rpx; }
+.order-header { display: flex; justify-content: space-between; margin-bottom: 16rpx; padding-bottom: 16rpx; border-bottom: 1rpx solid #EEE; }
+.order-no { font-size: 24rpx; color: #999; }
+.order-status { font-size: 28rpx; font-weight: bold; }
+.order-footer { display: flex; justify-content: space-between; margin-top: 16rpx; padding-top: 16rpx; border-top: 1rpx solid #EEE; }
+.order-time { font-size: 24rpx; color: #999; }
+.order-total { font-size: 32rpx; font-weight: bold; color: #FF6B6B; }

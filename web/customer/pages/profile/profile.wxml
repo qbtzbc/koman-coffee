@@ -1,0 +1,19 @@
+<!-- 个人中心 -->
+<view class="container">
+  <view class="profile-header card">
+    <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}"></image>
+    <text class="nickname">{{userInfo.nickName || '点击登录'}}</text>
+    <button wx:if="{{!isLogin}}" class="btn-login" bindtap="onLogin">微信登录</button>
+  </view>
+
+  <view class="menu-list">
+    <navigator class="menu-item" url="/pages/order/order">
+      <text>我的订单</text>
+      <text class="arrow">></text>
+    </navigator>
+  </view>
+
+  <view class="actions" wx:if="{{isLogin}}">
+    <button class="btn-secondary" bindtap="onLogout">退出登录</button>
+  </view>
+</view>

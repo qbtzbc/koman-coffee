@@ -1,0 +1,22 @@
+<!--
+  商品卡片组件
+-->
+<view class="product-card" bindtap="onTap">
+  <image class="product-image" src="{{productData.images[0]}}" mode="aspectFill"></image>
+  <view class="product-info">
+    <text class="product-name">{{productData.name}}</text>
+    <text class="product-desc">{{productData.description}}</text>
+    <view class="product-footer">
+      <view class="price-wrapper">
+        <text class="price">¥{{productData.price.medium}}</text>
+        <text class="price-label">起</text>
+      </view>
+      <view class="sales-wrapper">
+        <text class="sales">已售{{productData.sales}}</text>
+      </view>
+    </view>
+    <view class="add-cart-btn" wx:if="{{showAddCart}}" catchtap="onAddCart">
+      <text>+</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--
+  订单项组件
+-->
+<view class="order-item">
+  <image class="item-image" src="{{itemData.productImage}}" mode="aspectFill"></image>
+  <view class="item-content">
+    <view class="item-header">
+      <text class="item-name">{{itemData.productName}}</text>
+      <text class="item-price">¥{{itemData.price}}</text>
+    </view>
+    <text class="item-custom" wx:if="{{customText}}">{{customText}}</text>
+    <view class="item-footer">
+      <text class="item-quantity">x{{itemData.quantity}}</text>
+      <text class="item-total">¥{{totalPrice}}</text>
+    </view>
+  </view>
+</view>

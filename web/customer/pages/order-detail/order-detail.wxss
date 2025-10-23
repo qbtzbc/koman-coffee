@@ -1,0 +1,10 @@
+/* 订单详情样式 */
+.status-card { text-align: center; padding: 40rpx 20rpx; }
+.status-text { font-size: 36rpx; font-weight: bold; display: block; margin-bottom: 16rpx; }
+.order-no { font-size: 24rpx; color: #999; }
+.card-title { font-size: 32rpx; font-weight: bold; display: block; margin-bottom: 20rpx; }
+.info-row { display: flex; justify-content: space-between; padding: 16rpx 0; border-bottom: 1rpx solid #EEE; }
+.info-row.total { border-bottom: none; margin-top: 16rpx; }
+.label { color: #666; }
+.amount { font-size: 36rpx; font-weight: bold; color: #FF6B6B; }
+.actions { padding: 20rpx; }

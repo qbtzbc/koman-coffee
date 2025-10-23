@@ -1,0 +1,12 @@
+<!-- 商家登录 -->
+<view class="login-container">
+  <view class="login-header">
+    <text class="title">Koman Coffee</text>
+    <text class="subtitle">商家管理端</text>
+  </view>
+  <view class="login-form card">
+    <input class="input" placeholder="请输入账号" value="{{account}}" bindinput="onAccountInput"></input>
+    <input class="input" type="password" placeholder="请输入密码" value="{{password}}" bindinput="onPasswordInput"></input>
+    <button class="btn-primary" bindtap="onLogin">登录</button>
+  </view>
+</view>

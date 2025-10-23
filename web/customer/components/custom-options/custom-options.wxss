@@ -1,0 +1,44 @@
+/* 定制选项组件样式 */
+.custom-options {
+  padding: 20rpx 0;
+}
+
+.option-group {
+  margin-bottom: 30rpx;
+}
+
+.option-group:last-child {
+  margin-bottom: 0;
+}
+
+.option-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 16rpx;
+}
+
+.option-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.option-item {
+  min-width: 120rpx;
+  padding: 16rpx 24rpx;
+  background-color: #F5F5F5;
+  border: 2rpx solid #F5F5F5;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #666666;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.option-item.active {
+  background-color: #FFF5ED;
+  border-color: #6B4423;
+  color: #6B4423;
+  font-weight: bold;
+}

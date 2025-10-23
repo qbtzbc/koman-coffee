@@ -1,0 +1,12 @@
+<!-- 商家首页 -->
+<view class="container">
+  <view class="stats-grid">
+    <view class="stat-card card"><text class="label">待处理订单</text><text class="value">{{stats.pendingCount || 0}}</text></view>
+    <view class="stat-card card"><text class="label">今日订单</text><text class="value">{{stats.orderCount || 0}}</text></view>
+    <view class="stat-card card"><text class="label">今日营业额</text><text class="value">¥{{stats.revenue || 0}}</text></view>
+  </view>
+  <view class="quick-actions">
+    <navigator class="action-btn card" url="/pages/orders/orders">订单管理</navigator>
+    <navigator class="action-btn card" url="/pages/products/products">商品管理</navigator>
+  </view>
+</view>

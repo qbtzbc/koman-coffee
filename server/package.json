@@ -1,0 +1,31 @@
+{
+  "name": "koman-coffee-server",
+  "version": "1.0.0",
+  "description": "Koman Coffee 后端服务",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "mocha tests/**/*.test.js",
+    "init": "node scripts/init-data.js"
+  },
+  "keywords": ["coffee", "order", "wechat-miniprogram"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "multer": "^1.4.5-lts.1",
+    "axios": "^1.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "sinon": "^15.0.3"
+  }
+}
