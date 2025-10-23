@@ -1,0 +1,21 @@
+<!--
+  定制选项组件
+-->
+<view class="custom-options">
+  <view class="option-group" wx:for="{{options}}" wx:key="type">
+    <view class="option-title">{{item.name}}</view>
+    <view class="option-list">
+      <view 
+        class="option-item {{selectedValues[item.type] === option.value ? 'active' : ''}}"
+        wx:for="{{item.options}}"
+        wx:for-item="option"
+        wx:key="value"
+        bindtap="onSelectOption"
+        data-type="{{item.type}}"
+        data-value="{{option.value}}"
+      >
+        {{option.label}}
+      </view>
+    </view>
+  </view>
+</view>

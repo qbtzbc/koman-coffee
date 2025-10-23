@@ -1,0 +1,16 @@
+<!-- 订单管理 -->
+<view class="container">
+  <view class="tabs">
+    <view class="tab {{currentTab === 'pending_accept' ? 'active' : ''}}" bindtap="onTabChange" data-tab="pending_accept">待接单</view>
+    <view class="tab {{currentTab === 'processing' ? 'active' : ''}}" bindtap="onTabChange" data-tab="processing">制作中</view>
+    <view class="tab {{currentTab === 'completed' ? 'active' : ''}}" bindtap="onTabChange" data-tab="completed">已完成</view>
+  </view>
+  <view class="order-list">
+    <view class="order-card card" wx:for="{{orders}}" wx:key="_id" bindtap="onOrderTap" data-id="{{item._id}}">
+      <view class="order-header"><text class="order-no">{{item.orderNo}}</text><text class="status">{{item.statusText}}</text></view>
+      <view class="order-info"><text>商品数: {{item.items.length}}</text><text class="amount">¥{{item.totalAmount}}</text></view>
+      <text class="order-time">{{item.createdTime}}</text>
+    </view>
+  </view>
+  <view class="empty-state" wx:if="{{orders.length === 0}}"><text>暂无订单</text></view>
+</view>

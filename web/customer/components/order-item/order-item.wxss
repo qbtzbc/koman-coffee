@@ -1,0 +1,68 @@
+/* 订单项组件样式 */
+.order-item {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.item-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.item-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.item-price {
+  font-size: 24rpx;
+  color: #FF6B6B;
+  flex-shrink: 0;
+}
+
+.item-custom {
+  font-size: 24rpx;
+  color: #999999;
+  margin: 8rpx 0;
+}
+
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-quantity {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.item-total {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FF6B6B;
+}

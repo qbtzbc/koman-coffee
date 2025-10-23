@@ -1,0 +1,8 @@
+.header-actions { margin-bottom: 20rpx; }
+.product-card { display: flex; align-items: center; margin-bottom: 20rpx; }
+.product-image { width: 120rpx; height: 120rpx; border-radius: 8rpx; margin-right: 20rpx; }
+.product-info { flex: 1; }
+.name { font-size: 28rpx; font-weight: bold; display: block; margin-bottom: 8rpx; }
+.price { font-size: 32rpx; color: #FF6B6B; display: block; margin-bottom: 4rpx; }
+.stock { font-size: 24rpx; color: #999; }
+.product-actions { display: flex; flex-direction: column; gap: 8rpx; }

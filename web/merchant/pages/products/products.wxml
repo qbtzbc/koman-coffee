@@ -1,0 +1,19 @@
+<!-- 商品管理 -->
+<view class="container">
+  <view class="header-actions"><button class="btn-primary" bindtap="onAdd">添加商品</button></view>
+  <view class="product-list">
+    <view class="product-card card" wx:for="{{products}}" wx:key="_id">
+      <image class="product-image" src="{{item.images[0]}}" mode="aspectFill"></image>
+      <view class="product-info">
+        <text class="name">{{item.name}}</text>
+        <text class="price">¥{{item.price.medium}}</text>
+        <text class="stock">库存: {{item.stock}}</text>
+      </view>
+      <view class="product-actions">
+        <button size="mini" bindtap="onEdit" data-id="{{item._id}}">编辑</button>
+        <button size="mini" type="warn" bindtap="onDelete" data-id="{{item._id}}">删除</button>
+      </view>
+    </view>
+  </view>
+  <view class="empty-state" wx:if="{{products.length === 0}}"><text>暂无商品</text></view>
+</view>

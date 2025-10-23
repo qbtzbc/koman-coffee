@@ -1,0 +1,17 @@
+/* 购物车页面样式 */
+.cart-list { padding: 20rpx; padding-bottom: 120rpx; }
+.cart-item { display: flex; background: #FFF; border-radius: 16rpx; padding: 20rpx; margin-bottom: 20rpx; position: relative; }
+.item-image { width: 160rpx; height: 160rpx; border-radius: 8rpx; margin-right: 20rpx; }
+.item-info { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.item-name { font-size: 28rpx; font-weight: bold; color: #333; }
+.item-custom { font-size: 24rpx; color: #999; margin: 8rpx 0; }
+.item-footer { display: flex; justify-content: space-between; align-items: center; }
+.item-price { font-size: 32rpx; font-weight: bold; color: #FF6B6B; }
+.quantity-control { display: flex; align-items: center; gap: 16rpx; }
+.qty-btn { width: 48rpx; height: 48rpx; background: #F5F5F5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24rpx; }
+.qty-text { font-size: 28rpx; min-width: 40rpx; text-align: center; }
+.item-delete { position: absolute; top: 20rpx; right: 20rpx; font-size: 24rpx; color: #FF6B6B; }
+.bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #FFF; padding: 20rpx; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 -2rpx 8rpx rgba(0,0,0,0.1); }
+.total-info .label { font-size: 28rpx; color: #666; margin-right: 10rpx; }
+.total-price { font-size: 36rpx; font-weight: bold; color: #FF6B6B; }
+.btn-checkout { background: #6B4423; color: #FFF; padding: 20rpx 60rpx; border-radius: 8rpx; font-size: 28rpx; font-weight: bold; }

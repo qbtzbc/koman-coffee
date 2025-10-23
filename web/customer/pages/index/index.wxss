@@ -1,0 +1,39 @@
+/* 首页样式 */
+.search-bar {
+  padding: 20rpx;
+  background-color: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+
+.search-input {
+  background-color: #F5F5F5;
+  border-radius: 32rpx;
+  padding: 16rpx 24rpx;
+  font-size: 28rpx;
+}
+
+.category-nav {
+  white-space: nowrap;
+  padding: 20rpx;
+  background-color: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+
+.category-item {
+  display: inline-block;
+  padding: 12rpx 32rpx;
+  margin-right: 16rpx;
+  background-color: #F5F5F5;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.category-item.active {
+  background-color: #6B4423;
+  color: #FFFFFF;
+}
+
+.product-list {
+  padding: 0 20rpx;
+}

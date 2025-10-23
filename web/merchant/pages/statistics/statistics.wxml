@@ -1,0 +1,16 @@
+<!-- 统计数据 -->
+<view class="container">
+  <view class="stats-card card">
+    <text class="title">今日数据</text>
+    <view class="stats-row"><text>订单数:</text><text class="value">{{stats.orderCount || 0}}</text></view>
+    <view class="stats-row"><text>营业额:</text><text class="value">¥{{stats.revenue || 0}}</text></view>
+  </view>
+
+  <view class="products-card card">
+    <text class="title">热销商品</text>
+    <view class="product-item" wx:for="{{topProducts}}" wx:key="_id">
+      <text class="name">{{item.name}}</text>
+      <text class="sales">销量: {{item.sales}}</text>
+    </view>
+  </view>
+</view>

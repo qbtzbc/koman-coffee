@@ -1,0 +1,55 @@
+<!--
+  商品详情页
+-->
+<view class="container" wx:if="{{product}}">
+  <!-- 商品图片 -->
+  <swiper class="product-swiper" indicator-dots autoplay>
+    <swiper-item wx:for="{{product.images}}" wx:key="*this">
+      <image class="swiper-image" src="{{item}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 商品信息 -->
+  <view class="product-info card">
+    <view class="product-header">
+      <text class="product-name">{{product.name}}</text>
+      <text class="product-price">¥{{currentPrice}}</text>
+    </view>
+    <text class="product-desc">{{product.description}}</text>
+    <view class="product-meta">
+      <text class="sales">已售 {{product.sales}}</text>
+      <text class="stock">库存 {{product.stock}}</text>
+    </view>
+  </view>
+
+  <!-- 定制选项 -->
+  <view class="customization-section card">
+    <text class="section-title">定制选项</text>
+    <custom-options 
+      options="{{product.customOptions}}"
+      bindchange="onCustomChange"
+    ></custom-options>
+  </view>
+
+  <!-- 数量选择 -->
+  <view class="quantity-section card">
+    <text class="section-title">数量</text>
+    <view class="quantity-control">
+      <view class="quantity-btn" bindtap="onQuantityDecrease">-</view>
+      <input class="quantity-input" type="number" value="{{quantity}}" disabled></input>
+      <view class="quantity-btn" bindtap="onQuantityIncrease">+</view>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="total-price">
+      <text class="label">小计</text>
+      <text class="price">¥{{totalPrice}}</text>
+    </view>
+    <view class="action-buttons">
+      <view class="btn-cart" bindtap="onAddToCart">加入购物车</view>
+      <view class="btn-buy" bindtap="onBuyNow">立即购买</view>
+    </view>
+  </view>
+</view>

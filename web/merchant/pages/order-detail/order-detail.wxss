@@ -1,0 +1,5 @@
+.order-no { font-size: 24rpx; color: #999; display: block; margin-bottom: 16rpx; }
+.status { font-size: 32rpx; font-weight: bold; color: #1890ff; }
+.label { font-size: 28rpx; font-weight: bold; display: block; margin-bottom: 16rpx; }
+.item { display: flex; justify-content: space-between; padding: 16rpx 0; border-bottom: 1rpx solid #EEE; }
+.actions { padding: 20rpx; }
