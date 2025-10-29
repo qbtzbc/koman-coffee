@@ -6,7 +6,9 @@ App({
   globalData: {
     userInfo: null,
     token: null,
-    cart: [] // 购物车数据
+    cart: [], // 购物车数据
+    isAppReady: false, // App是否已准备就绪
+    loadingStartTime: 0 // 加载开始时间
   },
 
   /**
@@ -15,11 +17,19 @@ App({
   onLaunch() {
     console.log('Koman Coffee 顾客端启动');
     
+    // 记录加载开始时间
+    this.globalData.loadingStartTime = Date.now();
+    
     // 从本地存储加载用户信息
     this.loadUserInfo();
     
     // 从本地存储加载购物车
     this.loadCart();
+    
+    // 设置App准备就绪
+    setTimeout(() => {
+      this.globalData.isAppReady = true;
+    }, 500);
   },
 
   /**

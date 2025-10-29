@@ -1,0 +1,146 @@
+/* 加载动画组件样式 */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF9F0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 300ms ease-in;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo区域 */
+.logo-wrapper {
+  margin-bottom: 80rpx;
+}
+
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+/* 咖啡杯动画 */
+.coffee-animation {
+  margin-bottom: 60rpx;
+  position: relative;
+}
+
+.coffee-cup {
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+}
+
+.coffee-cup::before {
+  content: '';
+  position: absolute;
+  width: 80rpx;
+  height: 100rpx;
+  border: 6rpx solid #6B4423;
+  border-radius: 0 0 40rpx 40rpx;
+  border-top: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coffee-cup::after {
+  content: '';
+  position: absolute;
+  width: 90rpx;
+  height: 8rpx;
+  background-color: #6B4423;
+  border-radius: 4rpx;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+}
+
+/* 热气动画 */
+.rotating {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 加载文案 */
+.loading-text {
+  font-size: 28rpx;
+  color: #6B4423;
+  font-weight: 500;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 错误提示 */
+.error-container {
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-text {
+  font-size: 28rpx;
+  color: #F5222D;
+  margin-bottom: 30rpx;
+}
+
+.retry-btn {
+  background-color: #6B4423;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 48rpx;
+  padding: 20rpx 60rpx;
+  font-size: 28rpx;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 淡出动画（需要通过JS添加类） */
+.fade-out {
+  animation: fadeOut 300ms ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

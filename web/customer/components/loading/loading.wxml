@@ -1,0 +1,25 @@
+<!--
+  启动加载动画组件
+-->
+<view class="loading-container" wx:if="{{show}}">
+  <view class="loading-content">
+    <!-- 品牌Logo区域 -->
+    <view class="logo-wrapper">
+      <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    </view>
+    
+    <!-- 旋转咖啡杯动画 -->
+    <view class="coffee-animation">
+      <view class="coffee-cup rotating"></view>
+    </view>
+    
+    <!-- 加载文案 -->
+    <view class="loading-text">{{loadingText}}</view>
+    
+    <!-- 错误提示（超时时显示） -->
+    <view class="error-container" wx:if="{{showError}}">
+      <text class="error-text">{{errorText}}</text>
+      <button class="retry-btn" bindtap="onRetry">重试</button>
+    </view>
+  </view>
+</view>

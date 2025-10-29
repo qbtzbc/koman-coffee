@@ -10,14 +10,25 @@ Page({
     currentCategory: '',
     loading: false,
     page: 1,
-    hasMore: true
+    hasMore: true,
+    showLoading: true, // 显示启动加载动画
+    firstLoad: true // 是否首次加载
   },
 
   /**
    * 页面加载
    */
   onLoad() {
-    this.loadProducts();
+    // 首次加载显示加载动画
+    const app = getApp();
+    if (this.data.firstLoad) {
+      this.setData({ showLoading: true });
+      
+      // 加载数据
+      this.loadProducts();
+    } else {
+      this.loadProducts();
+    }
   },
 
   /**
@@ -70,12 +81,70 @@ Page({
           hasMore: products.length < res.total
         });
 
+        // 首次加载完成，隐藏加载动画
+        if (this.data.firstLoad) {
+          this.hideLoadingAnimation();
+        }
+
         if (callback) callback();
       })
       .catch(() => {
         this.setData({ loading: false });
+        
+        // 首次加载失败，也要隐藏动画
+        if (this.data.firstLoad) {
+          this.hideLoadingAnimation();
+        }
+        
         if (callback) callback();
       });
+  },
+
+  /**
+   * 隐藏加载动画
+   */
+  hideLoadingAnimation() {
+    // 获取加载组件并调用finishLoading
+    const loadingComponent = this.selectComponent('#app-loading');
+    if (loadingComponent) {
+      loadingComponent.finishLoading();
+    }
+    
+    // 标记为非首次加载
+    this.setData({ 
+      firstLoad: false,
+      showLoading: false 
+    });
+  },
+
+  /**
+   * 加载动画隐藏事件
+   */
+  onLoadingHide() {
+    this.setData({ showLoading: false });
+  },
+
+  /**
+   * 加载超时事件
+   */
+  onLoadingTimeout() {
+    console.log('加载超时');
+    wx.showToast({
+      title: '网络请求超时',
+      icon: 'none'
+    });
+  },
+
+  /**
+   * 重试加载
+   */
+  onLoadingRetry() {
+    console.log('重试加载');
+    this.setData({ 
+      page: 1,
+      hasMore: true 
+    });
+    this.loadProducts();
   },
 
   /**

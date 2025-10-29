@@ -1,6 +1,16 @@
 <!--
   首页 - 咖啡列表
 -->
+<!-- 启动加载动画 -->
+<loading 
+  id="app-loading" 
+  show="{{showLoading}}" 
+  loadingText="正在准备您的咖啡..."
+  bindhide="onLoadingHide"
+  bindtimeout="onLoadingTimeout"
+  bindretry="onLoadingRetry"
+></loading>
+
 <view class="container">
   <!-- 搜索栏 -->
   <view class="search-bar">
