@@ -1,0 +1,63 @@
+# Koman Coffee 开发环境 Docker Compose 配置
+version: '3.8'
+
+services:
+  # MongoDB 数据库服务
+  mongodb:
+    image: mongo:5.0
+    container_name: koman-coffee-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+      - ./data/logs/mongodb:/var/log/mongodb
+    environment:
+      MONGO_INITDB_DATABASE: koman_coffee
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    networks:
+      - koman-network
+
+  # Node.js 后端服务
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: koman-coffee-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules  # 防止本地 node_modules 覆盖容器中的
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DB_HOST: mongodb
+      DB_PORT: 27017
+      DB_NAME: koman_coffee
+      LOG_LEVEL: debug
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
+    networks:
+      - koman-network
+    command: npm run dev
+
+networks:
+  koman-network:
+    driver: bridge
+
+volumes:
+  mongodb-data:

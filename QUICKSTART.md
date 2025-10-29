@@ -2,6 +2,47 @@
 
 本指南帮助你在 5 分钟内快速运行 Koman Coffee 项目。
 
+## 🚀 方式一：使用 Docker Compose（最快）
+
+### 1. 确保已安装
+
+- Docker
+- Docker Compose
+- 微信开发者工具
+
+### 2. 一键启动
+
+```bash
+cd server
+npm run docker:dev
+```
+
+这将自动：
+- 启动 MongoDB 数据库
+- 启动 Node.js 后端服务
+- 执行健康检查
+
+### 3. 初始化数据
+
+```bash
+# 在另一个终端窗口执行
+docker-compose exec server npm run init
+```
+
+### 4. 验证安装
+
+```bash
+curl http://localhost:3000/health
+```
+
+### 5. 运行小程序
+
+按照下面“第六步：运行小程序”的步骤执行。
+
+---
+
+## 🛠️ 方式二：传统方式
+
 ## 🚀 第一步: 安装依赖
 
 ### 1. 确保已安装
