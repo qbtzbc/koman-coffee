@@ -1,9 +1,14 @@
 /**
  * 网络请求封装
+ * 支持多环境配置
  */
 
-// API基础URL - 请根据实际情况修改
-const API_BASE_URL = 'http://localhost:3000/api';
+// 导入环境配置
+const config = require('../config/index');
+
+// API基础URL - 从环境配置加载
+const API_BASE_URL = config.API_BASE_URL;
+const TIMEOUT = config.TIMEOUT || 10000;
 
 /**
  * 发起网络请求
@@ -33,6 +38,7 @@ const request = (url, options = {}) => {
       url: `${API_BASE_URL}${url}`,
       method,
       data,
+      timeout: TIMEOUT,
       header: {
         'Content-Type': 'application/json',
         'Authorization': token ? `Bearer ${token}` : ''
